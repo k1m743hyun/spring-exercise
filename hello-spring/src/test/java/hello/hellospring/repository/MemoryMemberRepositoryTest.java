@@ -66,4 +66,5 @@ public class MemoryMemberRepositoryTest {
         assertThat(result.size()).isEqualTo(2);
         //assertThat(result.size()).isEqualTo(3);
     }
+
 }
