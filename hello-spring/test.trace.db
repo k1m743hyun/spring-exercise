@@ -1,0 +1,6 @@
+2022-10-24 13:22:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE *[*] FROM MEMBER WHERE NAME = 'spring'"; expected "identifier"; SQL statement:
+delete * from member where name = 'spring' [42001-200]
+2022-10-24 13:22:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE *[*] FROM MEMBER"; expected "identifier"; SQL statement:
+delete * from member [42001-200]
