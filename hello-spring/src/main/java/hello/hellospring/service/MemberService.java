@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
 //@Service
+@Transactional
 public class MemberService {
 
     private MemberRepository memberRepository;
@@ -27,6 +29,7 @@ public class MemberService {
     /**
      * 회원 가입
      */
+    //@Transactional // Method 단위도 가
     public Long join(Member member) {
         // 같은 이름이 있는 중복 회원 X
         validateDuplicateMember(member);
