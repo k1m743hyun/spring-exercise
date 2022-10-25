@@ -27,6 +27,7 @@ public class MemberController {
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
         //memberService.setMemberRepository(); // 누구나 호출 가능
+        System.out.println("memberService = " +memberService.getClass());
     }
 
     @GetMapping("/members/new")

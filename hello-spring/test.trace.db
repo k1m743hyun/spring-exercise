@@ -16,3 +16,26 @@ show table member [42000-200]
 2022-10-24 15:47:51 jdbc[79]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SCHEMA[*] MEMBER"; expected "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
 schema member [42001-200]
+2022-10-25 10:43:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM MEMBER 
+
+INSERT INTO[*] MEMBER(NAME) VALUES('spring')"; SQL statement:
+SELECT * FROM MEMBER 
+
+insert into member(name) values('spring') [42000-200]
+2022-10-25 10:44:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM MEMBER 
+
+INSERT INTO[*] MEMBER(ID, NAME) VALUES('10', 'spring')"; SQL statement:
+SELECT * FROM MEMBER 
+
+insert into member(id, name) values('10', 'spring') [42000-200]
+2022-10-25 11:07:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'0L' (MEMBER: ""ID"" BIGINT DEFAULT NEXT VALUE FOR ""PUBLIC"".""SYSTEM_SEQUENCE_11F31574_9FE6_4176_A214_E0ED76B1CEFE"" NOT NULL NULL_TO_DEFAULT SEQUENCE ""PUBLIC"".""SYSTEM_SEQUENCE_11F31574_9FE6_4176_A214_E0ED76B1CEFE"")"; SQL statement:
+insert into member values ('0L', 'taehyun') [22018-200]
+2022-10-25 14:11:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE *[*] FROM MEMBER"; expected "identifier"; SQL statement:
+delete * from member [42001-200]
+2022-10-25 14:12:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE MEMBER FROM[*] MEMBER"; SQL statement:
+delete MEMBER from member [42000-200]
