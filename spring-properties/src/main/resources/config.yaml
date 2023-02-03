@@ -1,0 +1,5 @@
+pushgw:
+  gw:
+    - gw1:hello
+    - gw2:world
+    - gw3:test
