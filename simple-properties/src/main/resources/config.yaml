@@ -1,0 +1,15 @@
+agent:
+  file:
+    base:
+      path: /mnt
+    sub:
+      etc:
+        path: json/etc
+      status:
+        path: json/status
+      batch:
+        path: json/batch
+        meta:
+          path: json/batch/meta/
+        monitor:
+          path: json/batch/monitor
