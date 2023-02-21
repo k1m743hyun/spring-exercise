@@ -1,6 +1,5 @@
 package com.k1m743hyun.utils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -9,12 +8,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Slf4j
 @SpringBootTest
-class ConvertCLogTest {
+class CLogTest {
 
     @Test
     void cLogTest() {
-        ConvertCLog convertCLog = new ConvertCLog();
-        convertCLog.info("id:" + 1, "name:" + "hello", "group:" + null);
+        CLog CLog = new CLog();
+        CLog.info("id:" + 1, "name:" + "hello", "group:" + null);
     }
 
     @Test
