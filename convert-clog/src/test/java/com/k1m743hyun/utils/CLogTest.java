@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class CLogTest {
 
     @Test
-    void cLogTest() {
+    void CLogTest() {
         CLog CLog = new CLog();
         CLog.info("id:" + 1, "name:" + "hello", "group:" + null);
     }
@@ -34,7 +34,6 @@ class CLogTest {
 
     @Test
     void convertCLogArrayNullTest() {
-        String d = null;
         log.info("{}", Arrays.asList("id:" + 1, "name:" + "hello", "group:" + null, null).toString());
     }
 
