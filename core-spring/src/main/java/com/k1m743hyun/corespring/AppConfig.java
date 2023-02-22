@@ -2,6 +2,7 @@ package com.k1m743hyun.corespring;
 
 import com.k1m743hyun.corespring.discount.DiscountPolicy;
 import com.k1m743hyun.corespring.discount.FixDiscountPolicy;
+import com.k1m743hyun.corespring.discount.RateDiscountPolicy;
 import com.k1m743hyun.corespring.member.MemberRepository;
 import com.k1m743hyun.corespring.member.MemberService;
 import com.k1m743hyun.corespring.member.MemberServiceImpl;
@@ -32,6 +33,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        // return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
