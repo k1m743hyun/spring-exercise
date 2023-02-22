@@ -9,18 +9,23 @@ import com.k1m743hyun.corespring.member.MemberServiceImpl;
 import com.k1m743hyun.corespring.member.MemoryMemberRepository;
 import com.k1m743hyun.corespring.order.OrderService;
 import com.k1m743hyun.corespring.order.OrderServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
 
     // public MemberService memberService() {
     //     return new MemberServiceImpl(new MemoryMemberRepository());
     // }
 
+    @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
 
-    private MemberRepository memberRepository() {
+    @Bean
+    public MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
@@ -28,10 +33,12 @@ public class AppConfig {
     //     return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
     // }
 
+    @Bean
     public OrderService orderService() {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
+    @Bean
     public DiscountPolicy discountPolicy() {
         // return new FixDiscountPolicy();
         return new RateDiscountPolicy();
