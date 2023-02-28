@@ -15,7 +15,6 @@ public class HTMLCharacterEscapes extends CharacterEscapes {
         asciiEscapes = CharacterEscapes.standardAsciiEscapesForJSON();
         asciiEscapes['<'] = CharacterEscapes.ESCAPE_CUSTOM;
         asciiEscapes['>'] = CharacterEscapes.ESCAPE_CUSTOM;
-        asciiEscapes['&'] = CharacterEscapes.ESCAPE_CUSTOM;
         asciiEscapes['\"'] = CharacterEscapes.ESCAPE_CUSTOM;
         asciiEscapes['('] = CharacterEscapes.ESCAPE_CUSTOM;
         asciiEscapes[')'] = CharacterEscapes.ESCAPE_CUSTOM;

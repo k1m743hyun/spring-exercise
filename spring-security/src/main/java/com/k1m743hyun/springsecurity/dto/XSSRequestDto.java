@@ -10,4 +10,8 @@ import lombok.ToString;
 public class XSSRequestDto {
 
     private String content;
+
+    public XSSRequestDto(String content) {
+        this.content = content;
+    }
 }

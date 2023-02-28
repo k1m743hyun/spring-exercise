@@ -11,16 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class XSSRequestController {
 
-    @PostMapping("/xss/dto")
-    public String insertDto(@RequestBody XSSRequestDto requestDto) {
-
-        log.info("requestDto = {}", requestDto);
-
-        return requestDto.getContent();
-    }
-
-    @PostMapping("/xss/form")
-    public @ResponseBody String insertForm(XSSRequestDto requestDto) {
+    @PostMapping("/xss")
+    public String xss(@RequestBody XSSRequestDto requestDto) throws Exception {
 
         log.info("requestDto = {}", requestDto);
 
