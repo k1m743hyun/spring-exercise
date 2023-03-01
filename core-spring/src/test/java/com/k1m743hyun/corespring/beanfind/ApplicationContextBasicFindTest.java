@@ -1,9 +1,8 @@
-package com.k1m743hyun.corespring.beanFind;
+package com.k1m743hyun.corespring.beanfind;
 
 import com.k1m743hyun.corespring.AppConfig;
 import com.k1m743hyun.corespring.member.MemberService;
 import com.k1m743hyun.corespring.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;

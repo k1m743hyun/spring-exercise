@@ -1,6 +1,5 @@
-package com.k1m743hyun.corespring.beanFind;
+package com.k1m743hyun.corespring.beanfind;
 
-import com.k1m743hyun.corespring.AppConfig;
 import com.k1m743hyun.corespring.discount.DiscountPolicy;
 import com.k1m743hyun.corespring.discount.FixDiscountPolicy;
 import com.k1m743hyun.corespring.discount.RateDiscountPolicy;

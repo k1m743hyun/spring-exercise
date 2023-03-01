@@ -1,10 +1,9 @@
-package com.k1m743hyun.corespring.beanFind;
+package com.k1m743hyun.corespring.beanfind;
 
 import com.k1m743hyun.corespring.AppConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class ApplicationContextInfoTest {
