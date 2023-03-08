@@ -19,13 +19,19 @@ public class AppConfig {
     //     return new MemberServiceImpl(new MemoryMemberRepository());
     // }
 
+
+    // @Bean memberService -> new MemoryMemberRepository();
     @Bean
     public MemberService memberService() {
+
+        System.out.println("Call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+
+        System.out.println("Call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
@@ -33,10 +39,25 @@ public class AppConfig {
     //     return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
     // }
 
+    // @Bean orderService -> new MemoryMemberRepository()
     @Bean
     public OrderService orderService() {
+
+        System.out.println("Call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
+
+    // Expect)
+    // Call AppConfig.memberService
+    // Call AppConfig.memberRepository
+    // Call AppConfig.memberRepository
+    // Call AppConfig.orderService
+    // Call AppConfig.memberRepository
+
+    // Result)
+    // Call AppConfig.memberService
+    // Call AppConfig.memberRepository
+    // Call AppConfig.orderService
 
     @Bean
     public DiscountPolicy discountPolicy() {
