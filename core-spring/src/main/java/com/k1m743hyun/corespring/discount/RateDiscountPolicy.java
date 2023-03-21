@@ -2,7 +2,9 @@ package com.k1m743hyun.corespring.discount;
 
 import com.k1m743hyun.corespring.member.Grade;
 import com.k1m743hyun.corespring.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private final int discountPercent = 10;
