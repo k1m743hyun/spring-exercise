@@ -6,7 +6,10 @@ import com.k1m743hyun.corespring.discount.RateDiscountPolicy;
 import com.k1m743hyun.corespring.member.Member;
 import com.k1m743hyun.corespring.member.MemberRepository;
 import com.k1m743hyun.corespring.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     // private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -16,6 +19,7 @@ public class OrderServiceImpl implements OrderService {
     // private DiscountPolicy discountPolicy;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
