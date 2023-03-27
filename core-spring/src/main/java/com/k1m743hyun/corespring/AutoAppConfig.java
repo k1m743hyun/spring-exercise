@@ -1,5 +1,8 @@
 package com.k1m743hyun.corespring;
 
+import com.k1m743hyun.corespring.member.MemberRepository;
+import com.k1m743hyun.corespring.member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -11,4 +14,9 @@ import org.springframework.context.annotation.FilterType;
 )
 @Configuration
 public class AutoAppConfig {
+
+    @Bean(name = "memoryMemberRepository")
+    MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
 }
