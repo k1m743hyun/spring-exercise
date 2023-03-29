@@ -15,14 +15,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ApplicationContextSameBeanFindTest {
 
-    // AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
     AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SameBeanConfig.class);
 
     @Test
     @DisplayName("타입으로 조회 시 같은 타입이 둘 이상 있으면, 중복 오류가 발생함")
     void findBeanByTypeDuplicate() {
-
-        //MemberRepository bean = applicationContext.getBean(MemberRepository.class);
         assertThrows(NoUniqueBeanDefinitionException.class,
             () -> applicationContext.getBean(MemberRepository.class));
     }
@@ -32,6 +29,7 @@ public class ApplicationContextSameBeanFindTest {
     void findBeanByName() {
 
         MemberRepository memberRepository = applicationContext.getBean("memberRepository1", MemberRepository.class);
+
         assertThat(memberRepository).isInstanceOf(MemberRepository.class);
     }
 
@@ -40,11 +38,13 @@ public class ApplicationContextSameBeanFindTest {
     void findAllBeanByType() {
 
         Map<String, MemberRepository> beansOfType = applicationContext.getBeansOfType(MemberRepository.class);
+
         for (String key : beansOfType.keySet()) {
             System.out.println("key = " + key);
             System.out.println("beansOfType.get(key) = " + beansOfType.get(key));
         }
         System.out.println("beansOfType = " + beansOfType);
+
         assertThat(beansOfType.size()).isEqualTo(2);
     }
 

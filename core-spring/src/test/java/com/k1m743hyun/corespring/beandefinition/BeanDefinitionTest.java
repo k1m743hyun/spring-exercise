@@ -9,7 +9,6 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class BeanDefinitionTest {
 
-     // AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
     GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext("appConfig.xml");
 
      @Test

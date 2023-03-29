@@ -21,17 +21,12 @@ public class ApplicationContextBasicFindTest {
 
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
 
-        // System.out.println("memberService = " + memberService);
-        // System.out.println("memberService.getClass() = " + memberService.getClass());
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
 
     @Test
     @DisplayName("빈 이름으로 조회하기 X")
     void findBeanByNameX() {
-
-        // applicationContext.getBean("xxxx", MemberService.class);
-        //MemberService xxxx = applicationContext.getBean("xxxx", MemberService.class);
         assertThrows(NoSuchBeanDefinitionException.class,
             () -> applicationContext.getBean("xxxx", MemberService.class));
     }

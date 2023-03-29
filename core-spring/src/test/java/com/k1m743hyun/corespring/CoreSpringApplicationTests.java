@@ -8,12 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class CoreSpringApplicationTests {
 
-//	@Autowired
-//	OrderService orderService;
-
 	@Test
 	void contextLoads() {
-//		orderService.createOrder(1L, "itemA", 10000);
 	}
 
 }

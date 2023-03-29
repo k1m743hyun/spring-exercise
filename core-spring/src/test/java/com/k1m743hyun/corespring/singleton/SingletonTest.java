@@ -33,17 +33,9 @@ public class SingletonTest {
         assertThat(memberService1).isNotSameAs(memberService2);
     }
 
-//    public static void main(String[] args) {
-//        SingletonService singletonService1 = new SingletonService();
-//        SingletonService singletonService2 = new SingletonService();
-//    }
-
     @Test
     @DisplayName("싱글톤 패턴을 적용한 객체 사용")
     void singletonServiceTest() {
-
-        // private이므로 생성 불가
-        // new SingletonService();
 
         SingletonService singletonService1 = SingletonService.getInstance();
         SingletonService singletonService2 = SingletonService.getInstance();
@@ -52,8 +44,6 @@ public class SingletonTest {
         System.out.println("singletonService2 = " + singletonService2);
 
         assertThat(singletonService1).isSameAs(singletonService2);
-        // same: 객체 비교
-        // equal: 값 비교
     }
 
     @Test

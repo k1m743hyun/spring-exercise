@@ -4,11 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Component("service")
-//@Component("memberService2")
 public class MemberServiceImpl implements MemberService {
 
-    // private final MemberRepository memberRepository = new MemoryMemberRepository();
     private final MemberRepository memberRepository;
 
     @Autowired // applicationContext.getBean(MemberRepository.class)

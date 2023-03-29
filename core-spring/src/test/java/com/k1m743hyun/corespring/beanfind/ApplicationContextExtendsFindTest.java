@@ -22,8 +22,6 @@ public class ApplicationContextExtendsFindTest {
     @Test
     @DisplayName("부모 타입으로 조회 시, 자식이 둘 이상 있으면, 중복 오류가 발생함")
     void findBeanByParentTypeDuplicate() {
-
-        //DiscountPolicy bean = applicationContext.getBean(DiscountPolicy.class);
         assertThrows(NoUniqueBeanDefinitionException.class,
                 () -> applicationContext.getBean(DiscountPolicy.class));
     }
@@ -33,6 +31,7 @@ public class ApplicationContextExtendsFindTest {
     void findBeanByParentTypeBeanName() {
 
         DiscountPolicy rateDiscountPolicy = applicationContext.getBean("rateDiscountPolicy", DiscountPolicy.class);
+
         assertThat(rateDiscountPolicy).isInstanceOf(RateDiscountPolicy.class);
     }
 
@@ -41,6 +40,7 @@ public class ApplicationContextExtendsFindTest {
     void findBeanBySubType() {
 
         RateDiscountPolicy bean = applicationContext.getBean(RateDiscountPolicy.class);
+
         assertThat(bean).isInstanceOf(RateDiscountPolicy.class);
     }
 
@@ -49,7 +49,9 @@ public class ApplicationContextExtendsFindTest {
     void findAllBeanByParentType() {
 
         Map<String, DiscountPolicy> beansOfType = applicationContext.getBeansOfType(DiscountPolicy.class);
+
         assertThat(beansOfType.size()).isEqualTo(2);
+
         for (String key : beansOfType.keySet()) {
             System.out.println("key = " + key);
             System.out.println("beansOfType.get(key) = " + beansOfType.get(key));
@@ -61,6 +63,7 @@ public class ApplicationContextExtendsFindTest {
     void findAllBeanByObjectType() {
 
         Map<String, Object> beansOfType = applicationContext.getBeansOfType(Object.class);
+
         for (String key : beansOfType.keySet()) {
             System.out.println("key = " + key);
             System.out.println("beansOfType.get(key) = " + beansOfType.get(key));

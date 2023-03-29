@@ -14,9 +14,7 @@ import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-    // MemberService memberService = new MemberServiceImpl();
     MemberService memberService;
-    // OrderService orderService = new OrderServiceImpl();
     OrderService orderService;
 
     @BeforeEach
@@ -40,14 +38,4 @@ public class OrderServiceTest {
         // then
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
-
-//    @Test
-//    void fieldInjectionTest() {
-//        OrderServiceImpl orderService = new OrderServiceImpl();
-//
-//        orderService.setMemberRepository(new MemoryMemberRepository());
-//        orderService.setDiscountPolicy(new FixDiscountPolicy());
-//
-//        orderService.createOrder(1L, "itemA", 10000);
-//    }
 }
