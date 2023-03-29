@@ -2,8 +2,10 @@ package com.k1m743hyun.corespring.discount;
 
 import com.k1m743hyun.corespring.member.Grade;
 import com.k1m743hyun.corespring.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+//@Qualifier("fixDiscountPolicy")
 @Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
