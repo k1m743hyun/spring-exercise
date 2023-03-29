@@ -4,11 +4,9 @@ import com.k1m743hyun.corespring.discount.FixDiscountPolicy;
 import com.k1m743hyun.corespring.member.Grade;
 import com.k1m743hyun.corespring.member.Member;
 import com.k1m743hyun.corespring.member.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceImplTest {
 
