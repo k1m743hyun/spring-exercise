@@ -17,8 +17,6 @@ public class HelloLombok {
         HelloLombok helloLombok = new HelloLombok();
         helloLombok.setName("Taehyun");
 
-//        String name = helloLombok.getName();
-//        System.out.println("name = " + name);
         System.out.println("helloLombok = " + helloLombok);
     }
 }
