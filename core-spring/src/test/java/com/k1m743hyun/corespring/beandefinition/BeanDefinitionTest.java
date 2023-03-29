@@ -1,10 +1,8 @@
 package com.k1m743hyun.corespring.beandefinition;
 
-import com.k1m743hyun.corespring.AppConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class BeanDefinitionTest {

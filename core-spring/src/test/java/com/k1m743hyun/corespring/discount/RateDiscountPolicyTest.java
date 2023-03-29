@@ -2,7 +2,6 @@ package com.k1m743hyun.corespring.discount;
 
 import com.k1m743hyun.corespring.member.Grade;
 import com.k1m743hyun.corespring.member.Member;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

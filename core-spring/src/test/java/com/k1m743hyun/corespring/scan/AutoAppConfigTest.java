@@ -4,7 +4,6 @@ import com.k1m743hyun.corespring.AutoAppConfig;
 import com.k1m743hyun.corespring.member.MemberRepository;
 import com.k1m743hyun.corespring.member.MemberService;
 import com.k1m743hyun.corespring.order.OrderServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

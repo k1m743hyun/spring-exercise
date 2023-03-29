@@ -2,7 +2,6 @@ package com.k1m743hyun.corespring.singleton;
 
 import com.k1m743hyun.corespring.AppConfig;
 import com.k1m743hyun.corespring.member.MemberService;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
