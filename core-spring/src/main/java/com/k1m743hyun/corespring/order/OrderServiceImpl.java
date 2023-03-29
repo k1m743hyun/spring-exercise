@@ -6,7 +6,6 @@ import com.k1m743hyun.corespring.member.MemberRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Component("service")
 public class OrderServiceImpl implements OrderService {
 
     private MemberRepository memberRepository;
