@@ -1,17 +1,23 @@
 package com.k1m743hyun.corespring.order;
 
+import com.k1m743hyun.corespring.annotation.MainDiscountPolicy;
 import com.k1m743hyun.corespring.discount.DiscountPolicy;
 import com.k1m743hyun.corespring.member.Member;
 import com.k1m743hyun.corespring.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
