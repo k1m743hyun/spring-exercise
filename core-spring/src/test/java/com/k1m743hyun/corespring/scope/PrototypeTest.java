@@ -27,6 +27,8 @@ public class PrototypeTest {
 
         assertThat(bean1).isNotSameAs(bean2);
 
+        bean1.destroy();
+        bean2.destroy();
         applicationContext.close();
     }
 
