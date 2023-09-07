@@ -24,7 +24,6 @@ public class UserService {
                 userRequest.getEmail(),
                 userRequest.getPhoneNumber()
         );
-        log.info(user.getName());
         repository.save(user);
 
         publisher.publishEvent(new UserEvent(this, user.getName()));
