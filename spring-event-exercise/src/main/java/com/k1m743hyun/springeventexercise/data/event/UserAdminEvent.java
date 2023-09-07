@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationEvent;
 @Getter
 public class UserAdminEvent extends ApplicationEvent {
 
-    private String name;
+    private final String name;
 
     public UserAdminEvent(Object source, String name) {
         super(source);
