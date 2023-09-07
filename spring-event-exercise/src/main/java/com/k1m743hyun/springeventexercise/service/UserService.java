@@ -2,7 +2,7 @@ package com.k1m743hyun.springeventexercise.service;
 
 import com.k1m743hyun.springeventexercise.data.dto.UserRequest;
 import com.k1m743hyun.springeventexercise.data.entity.User;
-import com.k1m743hyun.springeventexercise.data.event.UserAdminEvent;
+import com.k1m743hyun.springeventexercise.data.event.UserEvent;
 import com.k1m743hyun.springeventexercise.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +27,6 @@ public class UserService {
         log.info(user.getName());
         repository.save(user);
 
-        publisher.publishEvent(new UserAdminEvent(this, user.getName()));
+        publisher.publishEvent(new UserEvent(this, user.getName()));
     }
 }

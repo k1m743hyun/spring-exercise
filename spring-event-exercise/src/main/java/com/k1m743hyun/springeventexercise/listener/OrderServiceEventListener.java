@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class AdminServiceEventListener implements ApplicationListener<UserEvent> {
+public class OrderServiceEventListener implements ApplicationListener<UserEvent> {
 
     @Override
     public void onApplicationEvent(UserEvent event) {
-        log.info("Admin Service: {}님이 회원으로 등록이 완료되었습니다.", event.getName());
+        log.info("Order Service: {}님, 이제 회원 주문으로 가능합니다.", event.getName());
     }
 }
