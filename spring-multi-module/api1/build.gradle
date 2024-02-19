@@ -1,0 +1,12 @@
+dependencies {
+	implementation project(':core')
+	implementation project(':util')
+}
+
+clean {
+	delete file('src/main/generated')
+}
+
+test {
+	useJUnitPlatform()
+}
