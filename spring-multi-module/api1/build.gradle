@@ -1,0 +1,11 @@
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+clean {
+	delete file('src/main/generated')
+}
+
+test {
+	useJUnitPlatform()
+}

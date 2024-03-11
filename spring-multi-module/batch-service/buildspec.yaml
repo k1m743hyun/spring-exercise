@@ -1,0 +1,40 @@
+version: 0.2
+env:
+  git-credential-helper: yes
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - echo $CODEBUILD_BUILD_NUMBER
+      - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin $PASSWORD
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - java -version
+      - chmod +x ./gradlew
+      - ./gradlew generateOasToSwagger
+      - ./gradlew build batch-service:bootJar -x check
+      - cd ./batch-service
+      - docker buildx build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
+      - docker push $REPOSITORY_URI:latest
+      - cd ..
+      - git clone -b main $ARGO
+      - git config --global user.email "k1m743hyun@icloud.com"
+      - git config --global user.name "Taehyun Kim"
+      - cd argo/batch-service/dev
+      - sed -i "s/$IMAGE_NAME:[0-9]*/$IMAGE_NAME:$CODEBUILD_BUILD_NUMBER/g" deployment.yaml
+      - git add .
+      - git commit -m "batch-service $CODEBUILD_BUILD_NUMBER"
+      - git fetch
+      - git rebase origin/main
+      - git push
