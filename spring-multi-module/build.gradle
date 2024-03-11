@@ -8,20 +8,19 @@ bootJar {
 	enabled = false
 }
 
-sourceCompatibility = '17'
-
 test {
 	useJUnitPlatform()
 }
 
 subprojects {
 	group = 'com.k1m743hyun'
-	version = '0.0.1-SNAPSHOT'
+	version = '0.0.1'
+	sourceCompatibility = '17'
 
 	apply plugin: 'java'
-	apply plugin: 'java-library'
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
+	apply from: 'gradle-scripts/etc.gradle'
 
 	repositories {
 		mavenCentral()
@@ -39,23 +38,25 @@ subprojects {
 		annotationProcessor 'org.projectlombok:lombok'
 		annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 	}
-}
 
-project(':api1') {
-	dependencies {
-		compileOnly project(':core')
-		compileOnly project(':util')
-	}
-}
-
-project(':api2') {
-	dependencies {
-		compileOnly project(':core')
-		compileOnly project(':util')
+	test {
+		useJUnitPlatform()
 	}
 }
 
 project(':core') {
 	bootJar { enabled = false }
 	jar { enabled = true }
+}
+
+project(':api-service') {
+	dependencies {
+		implementation project(':core')
+	}
+}
+
+project(':batch-service') {
+	dependencies {
+		implementation project(':core')
+	}
 }

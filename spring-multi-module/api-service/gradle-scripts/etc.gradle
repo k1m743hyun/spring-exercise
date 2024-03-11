@@ -1,0 +1,15 @@
+sourceSets {
+    main {
+        resources {
+            srcDir('src/main/java')
+        }
+    }
+}
+
+bootJar {
+    archiveFileName = 'api.jar'
+}
+
+clean {
+    delete files('out', 'src/main/generated')
+}
